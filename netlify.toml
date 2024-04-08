@@ -1,0 +1,23 @@
+# Arquivo netlify.toml básico
+
+# Definir a versão do build
+[build]
+  command = "npm run build"  # Comando para construir o seu site
+
+# Configurar redirecionamentos
+[[redirects]]
+  from = "/old-url"  # URL antiga
+  to = "/new-url"    # URL nova
+  status = 301       # Status de redirecionamento (301: Permanente, 302: Temporário)
+
+# Configurar cabeçalhos HTTP
+[[headers]]
+  # Configurar cabeçalho para todo o site
+  for = "/*"
+    [headers.values]
+    X-Frame-Options = "DENY"
+  
+  # Configurar cabeçalho para uma rota específica
+  for = "/api/*"
+    [headers.values]
+    Cache-Control = "no-cache"
