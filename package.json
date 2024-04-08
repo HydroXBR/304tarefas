@@ -17,9 +17,7 @@
     "typescript": "^4.5.5"
   },
   "type": "module",
-  {
   "scripts": {
     "build": "npm run build"
   }
-}
 }
