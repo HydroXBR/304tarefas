@@ -5,10 +5,8 @@
   # Comando de construção, se necessário
   command = "npm run build" # ou o comando correspondente para construir o front-end
 
-# Configurações do diretório público
-[build.publish]
-  # Define o diretório público para servir arquivos estáticos
-  directory = "public" # ou o diretório correspondente onde os arquivos estáticos serão gerados após a construção
+# Configuração do diretório público
+publish = "interface/public" # ou o diretório correspondente onde os arquivos estáticos serão gerados após a construção
 
 # Redirects and rewrites
 [[redirects]]
