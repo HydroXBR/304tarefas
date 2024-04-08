@@ -1,0 +1,129 @@
+body {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f1f1f1;
+}
+
+.table-resp {
+	overflow-x: auto;
+}
+
+.container {
+		max-width: 800px;
+		margin: 20px auto;
+		padding: 20px;
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+		text-align: center;
+		color: #333;
+}
+
+table {
+		width: 100%;
+		border-collapse: collapse;
+}
+
+th, td {
+		padding: 10px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+		color: #333;
+}
+
+th {
+		background-color: #dcdcdc;
+}
+
+tbody tr:nth-child(even) {
+		background-color: #f9f9f9;
+}
+
+input[type="text"],
+input[type="date"] {
+		width: calc(100% - 20px);
+		padding: 8px;
+		margin: 5px 0;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="submit"] {
+		width: 100%;
+		padding: 10px;
+		background-color: #007bff;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="submit"]:hover {
+		background-color: #0056b3;
+}
+.navbar a.link-adicionar {
+	color: yellow;
+}
+
+/* Estilos da Navbar */
+.navbar {
+	background-color: #333;
+	color: #fff;
+	padding: 15px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.navbar h1 {
+	margin: 0;
+	color: #fff;
+}
+
+.navbar a {
+	color: #fff;
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+.destacado {
+	background-color: #ffffcc; /* Amarelo clarinho */
+}
+
+/* Estilo para o tipo Prova */
+.tipo-prova {
+		background-color: #ece889; /* Amarelo */
+}
+
+/* Estilo para o tipo Trabalho */
+.tipo-trabalho {
+		background-color: #b3ffd0; /* Azul-royal */
+}
+
+/* Estilo para o tipo Atividade */
+.tipo-atividade {
+		background-color: #c7cbff; /* Verde-limão */
+}
+
+/* Estilo para o tipo Atividade */
+.tipo-apresentação {
+		background-color: #ffdbfc; /* Verde-limão */
+}
+
+/* Estilo para o tipo Parcial */
+.tipo-parcial {
+		background-color: #ffa08f; /* Vermelho-tomate */
+}
+
+/* Estilo comum para todos os tipos */
+.tipo {
+		border-radius: 10px; /* Borda arredondada */
+		padding: 5px 10px; /* Espaçamento interno */
+		display: inline-block; /* Exibir em linha */
+		margin-right: 5px; /* Margem à direita para separação */
+}

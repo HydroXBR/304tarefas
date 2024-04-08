@@ -1,0 +1,123 @@
+body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+}
+
+.navbar a.link-adicionar {
+	color: yellow;
+}
+/* Navbar */
+.navbar {
+	background-color: #333;
+	color: #fff;
+	padding: 15px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.navbar h1 {
+	margin: 0;
+	color: #fff;
+}
+
+.navbar a {
+		color: #fff;
+		text-decoration: none;
+		margin-right: 20px;
+}
+
+.data-comentario {
+		color: #6e6e6e; /* Cinza claro */
+		font-size: 0.8em; /* Tamanho menor */
+}
+
+/* Container Principal */
+.container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 20px;
+}
+
+/* Estilos dos Boxes */
+.box {
+		background-color: #f4f4f4;
+		padding: 20px;
+		margin-bottom: 20px;
+		border-radius: 10px;
+}
+
+.box h2 {
+		margin-top: 0;
+}
+
+/* Box do Título da Tarefa */
+.boxx {
+	text-align: center;
+	background-color: #f4f4a9;
+}
+
+/* Espaço para inserir comentários */
+.espaco-comentar {
+		margin-top: 20px;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		background-color: #f9f9f9;
+		overflow: hidden; /* Evita que o conteúdo ultrapasse o box */
+}
+
+.espaco-comentar textarea {
+		width: calc(100% - 20px); /* Define a largura da textarea para preencher o espaço disponível, subtraindo o padding */
+		margin-bottom: 10px;
+		padding: 5px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		resize: vertical; /* Permite que o usuário redimensione a altura verticalmente */
+}
+
+.espaco-comentar button {
+		width: 100%;
+		padding: 10px;
+		border: none;
+		border-radius: 5px;
+		background-color: #007bff;
+		color: #fff;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+}
+
+.espaco-comentar button:hover {
+		background-color: #0056b3;
+}
+
+/* Comentários */
+#comentarios {
+		margin-bottom: 20px;
+}
+
+#comentarios div {
+		margin-bottom: 10px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 10px;
+}
+
+#comentarios div:last-child {
+		border-bottom: none;
+}
+
+/* Botão de Voltar */
+#btnVoltar {
+		width: 100%;
+		background-color: #333;
+		color: white;
+		padding: 10px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-top: 20px;
+}
+
+#btnVoltar:hover {
+		background-color: #555;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adicionar Tarefa - 205 Tarefas</title>
+	<link rel="stylesheet" href="add.css">
+	<link rel="icon" type="image/png" href="https://i.ibb.co/TtGML6p/205.png">
+</head>
+<body>
+	<div class="navbar">
+		<h1>205 Tarefas</h1>
+		<a href="/">Página Inicial</a>
+		<a href="/sobre">Sobre</a>
+		<a href="/horarios">Horários</a>
+		<a href="/add" class="link-adicionar">Adicionar Tarefa</a>
+	</div>
+	<div class="container">
+		<h1>Adicionar Tarefa</h1>
+		<form id="addTaskForm" action="#">
+
+			<p>Por favor, use de boa-fé e preencha informações verdadeiras, principalmente seu nome. Esta é uma plataforma colaborativa, e, para não burocratizar, não foi feito um sistema de login. Colabore com o projeto :) Obrigado por colaborar adicionando sua tarefa! <33 - isaias</p>
+			<label for="author">Seu nome:</label>
+			<select id="author" name="author" class="form-input">
+			</select>
+			
+			<label for="tipo">Tipo:</label>
+			<select id="tipo" name="tipo" class="form-input">
+				<option value="prova">Prova</option>
+				<option value="atividade">Atividade</option>
+				<option value="trabalho">Trabalho</option>
+				<option value="parcial">Parcial</option>
+				<option value="apresentação">Apresentação</option>
+			</select>
+			
+			<label for="titulo">Título:</label>
+			<input type="text" id="titulo" name="titulo" placeholder="Insira o título da tarefa" minlength="5" maxlength="25" required>
+			<label for="desc">Descrição:</label>
+			<input type="text" id="desc" name="desc" placeholder="Descreva a tarefa, com detalhes, se possível." minlength="5" maxlength="200" required>
+			
+			<label for="disciplina">Disciplina:</label>
+			<select id="disciplina" name="disciplina" class="form-input">
+			</select>
+
+			<label for="nivel">Nível:</label>
+			<select id="nivel" name="nivel" class="form-input">
+				<option value="Fácil">Fácil (1 hora)</option>
+				<option value="Médio">Médio (2-5 horas)</option>
+				<option value="Difícil">Difícil (1 dia)</option>
+				<option value="Intankável">Intankável (1 semana)</option>
+			</select>
+
+			<label for="pedida-em">Pedida em:</label>
+			<input type="date" id="pedida-em" name="pedida-em">
+			
+			<label for="entrega">Entrega:</label>
+			<input type="date" id="entrega" name="entrega">
+
+			
+			<input type="submit" value="Adicionar">
+		</form>
+	</div>
+	<script src="add.js"></script>
+</body>
+</html>
