@@ -1,23 +1,24 @@
-# Arquivo netlify.toml básico
-
-# Definir a versão do build
+# Build settings
 [build]
-  command = "npm run build"  # Comando para construir o seu site
+  # Define o diretório de construção para a pasta interface
+  base = "interface"
+  # Comando de construção, se necessário
+  command = "npm run build" # ou o comando correspondente para construir o front-end
 
-# Configurar redirecionamentos
+# Configurações do diretório público
+[build.publish]
+  # Define o diretório público para servir arquivos estáticos
+  directory = "public" # ou o diretório correspondente onde os arquivos estáticos serão gerados após a construção
+
+# Redirects and rewrites
 [[redirects]]
-  from = "/old-url"  # URL antiga
-  to = "/new-url"    # URL nova
-  status = 301       # Status de redirecionamento (301: Permanente, 302: Temporário)
+  # Redireciona todas as solicitações para o index.js (para o roteamento no servidor)
+  from = "/*"
+  to = "/index.js"
+  status = 200
 
-# Configurar cabeçalhos HTTP
-[[headers]]
-  # Configurar cabeçalho para todo o site
-  for = "/*"
-    [headers.values]
-    X-Frame-Options = "DENY"
-  
-  # Configurar cabeçalho para uma rota específica
-  for = "/api/*"
-    [headers.values]
-    Cache-Control = "no-cache"
+# Redirect para a página inicial
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
