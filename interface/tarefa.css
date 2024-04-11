@@ -7,6 +7,11 @@ body {
 .navbar a.link-adicionar {
 	color: yellow;
 }
+
+p{
+	word-break: break-all;
+}
+
 /* Navbar */
 .navbar {
 	background-color: #333;
