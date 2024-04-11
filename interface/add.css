@@ -87,3 +87,12 @@ input[type="submit"]:hover {
 select.form-input {
 		width: calc(100% - 22px); /* ajuste conforme necessário */
 }
+
+textarea {
+		width: calc(100% - 20px);
+		padding: 8px;
+		margin: 5px 0 15px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		resize: vertical; 
+}
