@@ -207,8 +207,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		const tipo = document.getElementById('tipo').value
 		const titulo = document.getElementById('titulo').value
 		const disciplina = document.getElementById('disciplina').value
-		const pedidaEm = Date.parse(document.getElementById('pedida-em').value)
-		const entrega = Date.parse(document.getElementById('entrega').value)
+		const pedidaa = Date.parse(document.getElementById('pedida-em').value)
+		const pedidaEm = new Date(pedidaa).setHours(data.getHours() + 24);
+		const entregaa = Date.parse(document.getElementById('entrega').value)
+		const entrega = new Date(entregaa).setHours(data.getHours() + 24)
 		const author = document.getElementById('author').value
 		const desc = document.getElementById('desc').value
 		const nivel = document.getElementById('nivel').value
