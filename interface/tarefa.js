@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 			const tarefa = await response.json();
 
 			document.getElementById('titulo').textContent = tarefa.title;
-			document.getElementById('descricao').innerHTML = tarefa.desc.replace(/(\bhttps?:\/\/\S+)/gi, '<a href="$1">$1</a>');
+			document.getElementById('descricao').innerHTML = tarefa.desc.replace(/\/\/\//gmi, "<br></br>").replace(/(\bhttps?:\/\/\S+)/gi, '<a href="$1">$1</a>');
 			document.getElementById('disciplina').textContent = materia(tarefa.disc);
 			document.getElementById('pedida-em').textContent = new Date(tarefa.pedida).toLocaleDateString();
 			document.getElementById('entrega').textContent = new Date(tarefa.entrega).toLocaleDateString();
