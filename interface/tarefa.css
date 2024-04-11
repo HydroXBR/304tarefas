@@ -8,8 +8,8 @@ body {
 	color: yellow;
 }
 
-.quebrar{
-	word-break: break-all;
+#descricao a {
+    overflow-wrap: break-word;
 }
 
 /* Navbar */
