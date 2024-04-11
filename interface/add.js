@@ -208,9 +208,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		const titulo = document.getElementById('titulo').value
 		const disciplina = document.getElementById('disciplina').value
 		const pedidaa = Date.parse(document.getElementById('pedida-em').value)
-		const pedidaEm = new Date(pedidaa).setHours(pedidaa.getHours() + 24);
+		const pedidaEm = new Date(pedidaa).setHours(new Date(pedidaa).getHours() + 24);
 		const entregaa = Date.parse(document.getElementById('entrega').value)
-		const entrega = new Date(entregaa).setHours(entregaa.getHours() + 24)
+		const entrega = new Date(entregaa).setHours(new Date(entregaa).getHours() + 24)
 		const author = document.getElementById('author').value
 		const desc = document.getElementById('desc').value
 		const nivel = document.getElementById('nivel').value
