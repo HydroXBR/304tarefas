@@ -213,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const entrega = new Date(entregaa).setHours(new Date(entregaa).getHours() + 24)
 		const author = document.getElementById('author').value
 		const desc = document.getElementById('desc').value
+		console.log("DESC:", desc)
 		const nivel = document.getElementById('nivel').value
 
 		if(entrega < pedidaEm){
