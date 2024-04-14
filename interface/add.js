@@ -18,12 +18,12 @@ const alunos = [
 		"id": "alexa"
 	},
 	{
-		"complete": "Amanda Ximenes",
-		"id": "amanda"
+		"complete": "Anna Jaques",
+		"id": "annaj"
 	},
 	{
-		"complete": "Ana Jaques",
-		"id": "annaj"
+		"complete": "Amanda Ximenes",
+		"id": "amanda"
 	},
 	{
 		"complete": "Ana Massulo",
@@ -94,6 +94,10 @@ const alunos = [
 		"id": "kami"
 	},
 	{
+		"complete": "Kauanne Bruce",
+		"id": "kau"
+	},
+	{
 		"complete": "Laila Auzier",
 		"id": "laila"
 	},
@@ -114,7 +118,7 @@ const alunos = [
 		"id": "lucas"
 	},
 	{
-		"complete": "Luíz Antônio",
+		"complete": "Luís Antônio",
 		"id": "tonhao"
 	},
 	{
@@ -158,7 +162,7 @@ const alunos = [
 		"id": "vini"
 	},
 	{
-		"complete": "Yasmin",
+		"complete": "Yasmin Carvalho",
 		"id": "yasmin"
 	}
 ];
