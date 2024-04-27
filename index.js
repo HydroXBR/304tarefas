@@ -179,6 +179,33 @@ app.get('/addlembrete',function(req,res) {
 	res.sendFile(__dirname + '/interface/addlembrete.html')
 });
 
+app.get('/moredays', async function(req, res) {
+	console.log("Access MOREDAYS: " + new Date());
+	const { id, days } = req.query;
+
+	try {
+		const tar = await tarefa.findOne({ _id: id });
+		if (!tar) {
+			return res.status(404).send("Task not found");
+		}
+
+		function addmore(d, days){
+			let datedays = new Date(d);
+			let hoursadded = datedays.getHours() + (24 * Number(days));
+			datedays.setHours(hoursadded);
+			return datedays.getTime();
+		}
+
+		let entrega = tar.entrega;
+		tar.entrega = addmore(entrega, parseInt(days));
+		await tar.save();
+		res.send(JSON.stringify(tar));
+	} catch (err) {
+		console.log(err);
+		res.status(500).send("Internal Server Error");
+	}
+});
+
 app.get('/addtar', function(req, res) {
 	const { author, tipo, titulo, desc, disciplina, pedida, entrega, nivel } = req.query;
 	console.log(req.query);
