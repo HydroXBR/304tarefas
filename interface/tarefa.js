@@ -48,10 +48,6 @@ const alunos = [
 		"id": "evan"
 	},
 	{
-		"complete": "Henrique Neto",
-		"id": "henri"
-	},
-	{
 		"complete": "Igor Paiva",
 		"id": "igor"
 	},
@@ -150,10 +146,6 @@ const alunos = [
 	{
 		"complete": "Vinícius Costa",
 		"id": "vini"
-	},
-	{
-		"complete": "Yasmin Carvalho",
-		"id": "yasmin"
 	}
 ];
 
@@ -174,7 +166,8 @@ const disciplinas = [
 	{ value: "bio", label: "Biologia" },
 	{ value: "ucabio", label: "UCA (Biologia)" },
 	{ value: "quim", label: "Química" },
-	{ value: "projv", label: "Projeto de Vida" }
+	{ value: "projv", label: "Projeto de Vida" },
+	{ value: "pinte", label: "Projeto Integrador" }
 ];
 
 function getLabelByValue(value) {
