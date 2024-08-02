@@ -19,7 +19,8 @@ const disciplinas = [
 	{ value: "bio", label: "Biologia" },
 	{ value: "ucabio", label: "UCA (Biologia)" },
 	{ value: "quim", label: "Química" },
-	{ value: "projv", label: "Projeto de Vida" }
+	{ value: "projv", label: "Projeto de Vida" },
+	{ value: "pinte", label: "Projeto Integrador" }
 ];
 
 function getLabelByValue(value) {
