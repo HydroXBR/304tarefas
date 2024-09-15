@@ -64,8 +64,12 @@ const alunos = [
 		"id": "aguiar"
 	},
 	{
-		"complete": "José Bessa",
+		"complete": "José A. Bessa",
 		"id": "bessa"
+	},
+	{
+		"complete": "José Henrique",
+		"id": "jhenri"
 	},
 	{
 		"complete": "Jhennyfer Lima",
