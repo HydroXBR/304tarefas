@@ -2,6 +2,11 @@ function pmaiuscula(string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+document.getElementById('menuIcon').addEventListener('click', function () {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active'); 
+});
+
 const disciplinas = [
 	{ value: "art", label: "Artes" },
 	{ value: "port", label: "Português" },
