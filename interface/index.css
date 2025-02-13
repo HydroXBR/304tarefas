@@ -37,7 +37,6 @@ p {
     margin-bottom: 20px;
 }
 
-/* Navbar */
 .navbar {
     background: rgba(36, 0, 66, 0.9);
     backdrop-filter: blur(10px);
@@ -79,7 +78,6 @@ p {
     font-weight: 600;
 }
 
-/* Tabelas */
 .table-resp {
     overflow-x: auto;
     margin-bottom: 30px;
@@ -117,7 +115,6 @@ tbody tr:hover {
     transition: background-color 0.3s;
 }
 
-/* Inputs e botões */
 input[type="text"],
 input[type="date"] {
     width: 100%;
@@ -155,7 +152,6 @@ input[type="submit"]:hover {
     background-color: #9a67ea;
 }
 
-/* Estilos para os tipos de tarefa */
 .tipo {
     border-radius: 8px;
     padding: 6px 12px;
