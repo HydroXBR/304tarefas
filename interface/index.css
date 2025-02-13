@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #150027;
     color: #e0e0e0;
     margin: 0;
@@ -24,11 +24,14 @@ body {
 h1 {
     text-align: center;
     color: #bb86fc;
+    font-weight: 600;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #240042;
+    background: rgba(36, 0, 66, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: #fff;
     padding: 15px;
     text-align: center;
@@ -36,19 +39,23 @@ h1 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar h1 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.6em;
+    font-weight: 700;
 }
 
 .navbar a {
     color: #e0e0e0;
     text-decoration: none;
     margin: 0 15px;
-    font-weight: bold;
+    font-weight: 500;
     transition: color 0.3s;
+    font-size: 1.1em;
 }
 
 .navbar a:hover {
@@ -82,6 +89,7 @@ th, td {
 th {
     background-color: #2c0050;
     color: #bb86fc;
+    font-weight: 600;
 }
 
 tbody tr:nth-child(even) {
@@ -98,6 +106,8 @@ input[type="date"] {
     border-radius: 5px;
     background-color: #240042;
     color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
 }
 
 input[type="submit"] {
@@ -109,6 +119,7 @@ input[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    font-weight: 600;
     transition: background 0.3s;
 }
 
@@ -124,6 +135,7 @@ input[type="submit"]:hover {
     margin-right: 5px;
     font-weight: bold;
     color: #150027;
+    font-family: 'Poppins', sans-serif;
 }
 
 .tipo-prova {
