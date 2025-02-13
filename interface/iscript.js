@@ -6,21 +6,15 @@ const disciplinas = [
 	{ value: "art", label: "Artes" },
 	{ value: "port", label: "Português" },
 	{ value: "mat", label: "Matemática" },
-	{ value: "ucemat", label: "UCE (Matemática)" },
 	{ value: "fis", label: "Física" },
 	{ value: "hist", label: "História" },
-	{ value: "ucahist", label: "UCA - Povos Amazônicos" },
 	{ value: "socio", label: "Sociologia" },
 	{ value: "geo", label: "Geografia" },
-	{ value: "idama", label: "IDAMA" },
 	{ value: "edfis", label: "Educação Física" },
 	{ value: "ing", label: "Inglês" },
 	{ value: "fil", label: "Filosofia" },
 	{ value: "bio", label: "Biologia" },
-	{ value: "ucabio", label: "UCA (Biologia)" },
-	{ value: "quim", label: "Química" },
-	{ value: "projv", label: "Projeto de Vida" },
-	{ value: "pinte", label: "Projeto Integrador" }
+	{ value: "quim", label: "Química" }
 ];
 
 function getLabelByValue(value) {
