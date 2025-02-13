@@ -1,6 +1,12 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	console.log("loaded")
 	const form = document.getElementById('addTaskForm');
+	document.getElementById('menuIcon').addEventListener('click', function () {
+    		const navLinks = document.getElementById('navLinks');
+		    navLinks.classList.toggle('active'); 
+	});
 
 	form.addEventListener('submit', function(event) {
 		event.preventDefault();
