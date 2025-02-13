@@ -1,5 +1,9 @@
 document.getElementById('btnVoltar').addEventListener('click', function() {
-		window.location.href = '/'; // Redireciona para a página principal
+		window.location.href = '/'; 
+});
+document.getElementById('menuIcon').addEventListener('click', function () {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active'); 
 });
 
 const alunos = [
