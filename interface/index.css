@@ -182,3 +182,17 @@ input[type="submit"]:hover {
 .tipo-parcial {
     background-color: #f44336;
 }
+
+table a {
+    color: #ffffff;
+    text-decoration: underline; 
+    transition: color 0.3s; 
+}
+
+table a:visited {
+    color: #ffffff; 
+}
+
+table a:hover {
+    color: #ffcc00; 
+}
