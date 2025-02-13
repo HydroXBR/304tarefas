@@ -3,175 +3,177 @@ document.getElementById('btnVoltar').addEventListener('click', function() {
 });
 
 const alunos = [
-	{
-		"complete": "Alexandra Evelyn",
-		"id": "alexa"
-	},
-	{
-		"complete": "Anna Jaques",
-		"id": "annaj"
-	},
-	{
-		"complete": "Amanda Ximenes",
-		"id": "amanda"
-	},
-	{
-		"complete": "Ana Massulo",
-		"id": "massulo"
-	},
-	{
-		"complete": "Beatriz Morais",
-		"id": "bea"
-	},
-	{
-		"complete": "Caleb Alves",
-		"id": "caleb"
-	},
-	{
-		"complete": "Carlos Diego",
-		"id": "carlos"
-	},
-	{
-		"complete": "Dandara Amorim",
-		"id": "dandis"
-	},
-	{
-		"complete": "Eduardo Rossoni",
-		"id": "rssn"
-	},
-	{
-		"complete": "Emanuel Kalebe",
-		"id": "kalebe"
-	},
-	{
-		"complete": "Evandro Feitosa",
-		"id": "evan"
-	},
-	{
-		"complete": "Igor Paiva",
-		"id": "igor"
-	},
-	{
-		"complete": "Isaías Nascimento",
-		"id": "isaias"
-	},
-	{
-		"complete": "João Gustavo",
-		"id": "joao"
-	},
-	{
-		"complete": "João V. Aguiar",
-		"id": "aguiar"
-	},
-	{
-		"complete": "José A. Bessa",
-		"id": "bessa"
-	},
-	{
-		"complete": "José Henrique",
-		"id": "jhenri"
-	},
-	{
-		"complete": "Jhennyfer Lima",
-		"id": "jhen"
-	},
-	{
-		"complete": "Jeremias Holanda",
-		"id": "jeremias"
-	},
-	{
-		"complete": "Kamille Ataide",
-		"id": "kami"
-	},
-	{
-		"complete": "Kauanne Bruce",
-		"id": "kau"
-	},
-	{
-		"complete": "Laila Auzier",
-		"id": "laila"
-	},
-	{
-		"complete": "Ludmylla Gabriela",
-		"id": "ludm"
-	},
-	{
-		"complete": "Luma Chaves",
-		"id": "luma"
-	},
-	{
-		"complete": "Lívia Nakajima",
-		"id": "naka"
-	},
-	{
-		"complete": "Lucas Daniel",
-		"id": "lucas"
-	},
-	{
-		"complete": "Luís Antônio",
-		"id": "tonhao"
-	},
-	{
-		"complete": "Maria Clara",
-		"id": "clara"
-	},
-	{
-		"complete": "Maria Eduarda",
-		"id": "maria"
-	},
-	{
-		"complete": "Mário Henrique",
-		"id": "mario"
-	},
-	{
-		"complete": "Nathália Brito",
-		"id": "nath"
-	},
-	{
-		"complete": "Nicolly Franco",
-		"id": "nicolly"
-	},
-	{
-		"complete": "Pedro Henrique",
-		"id": "pedro"
-	},
-	{
-		"complete": "Raquel Benarrós",
-		"id": "raquel"
-	},
-	{
-		"complete": "Sara Cristina",
-		"id": "sara"
-	},
-	{
-		"complete": "Sophia Gentil",
-		"id": "soph"
-	},
-	{
-		"complete": "Vinícius Costa",
-		"id": "vini"
-	}
+  {
+    "complete": "Addlynes Avelino",
+    "id": "addlynes"
+  },
+  {
+    "complete": "Amanda Luizy",
+    "id": "luizy"
+  },
+  {
+    "complete": "Ana Júlia",
+    "id": "ajulia"
+  },
+  {
+    "complete": "Ana Laura",
+    "id": "alaura"
+  },
+  {
+    "complete": "Anna Paula",
+    "id": "annap"
+  },
+  {
+    "complete": "Beatriz Moreira",
+    "id": "bmoreira"
+  },
+  {
+    "complete": "Carla Isabela",
+    "id": "carla"
+  },
+  {
+    "complete": "Carlos Eduardo",
+    "id": "ceduardo"
+  },
+  {
+    "complete": "Derick Mendes",
+    "id": "derick"
+  },
+  {
+    "complete": "Emanuel Kalebe",
+    "id": "kalebe"
+  },
+  {
+    "complete": "Isaías Nascimento",
+    "id": "isaias"
+  },
+  {
+    "complete": "Izabele Miranda",
+    "id": "izabele"
+  },
+  {
+    "complete": "Jaqueline Catunda",
+    "id": "jaque"
+  },
+  {
+    "complete": "Jennifer Gurgel",
+    "id": "jennifer"
+  },
+  {
+    "complete": "João Diego",
+    "id": "jdiego"
+  },
+  {
+    "complete": "José Henrique",
+    "id": "jhenri"
+  },
+  {
+    "complete": "Josué Souto",
+    "id": "josue"
+  },
+  {
+    "complete": "Júlia Dianny",
+    "id": "juliad"
+  },
+  {
+    "complete": "Laura Albuquerque",
+    "id": "laura"
+  },
+  {
+    "complete": "Lauro Tomaz",
+    "id": "lauro"
+  },
+  {
+    "complete": "Letícia Dayanne",
+    "id": "leticia"
+  },
+  {
+    "complete": "Livinny Batalha",
+    "id": "livinny"
+  },
+  {
+    "complete": "Lohannah Katharina",
+    "id": "lohannah"
+  },
+  {
+    "complete": "Lucas Daniel",
+    "id": "ldaniel"
+  },
+  {
+    "complete": "Lucas Prestes",
+    "id": "lprestes"
+  },
+  {
+    "complete": "Luiz Gustavo",
+    "id": "luizg"
+  },
+  {
+    "complete": "Lyzbrenda Frota",
+    "id": "lyzbrenda"
+  },
+  {
+    "complete": "Maria Eduarda Cruz",
+    "id": "mcruz"
+  },
+  {
+    "complete": "Maria Eduarda dos Anjos",
+    "id": "manjos"
+  },
+  {
+    "complete": "Maria Isabelle",
+    "id": "misabelle"
+  },
+  {
+    "complete": "Nicolas Barboza",
+    "id": "nicolas"
+  },
+  {
+    "complete": "Nicole Maciel",
+    "id": "nmaciel"
+  },
+  {
+    "complete": "Nicole Lopes",
+    "id": "nlopes"
+  },
+  {
+    "complete": "Nicolly Franco",
+    "id": "nicolly"
+  },
+  {
+    "complete": "Roberta Cambriai",
+    "id": "roberta"
+  },
+  {
+    "complete": "Safira Tomiko",
+    "id": "safira"
+  },
+  {
+    "complete": "Thicyane Fernanda",
+    "id": "thicyane"
+  },
+  {
+    "complete": "Ulysses Vidal",
+    "id": "ulysses"
+  },
+  {
+    "complete": "Vitória Lavínia",
+    "id": "vitoria"
+  }
 ];
 
 const disciplinas = [
 	{ value: "art", label: "Artes" },
 	{ value: "port", label: "Português" },
 	{ value: "mat", label: "Matemática" },
-	{ value: "ucemat", label: "UCE (Matemática)" },
 	{ value: "fis", label: "Física" },
 	{ value: "hist", label: "História" },
-	{ value: "ucahist", label: "UCA - Povos Amazônicos" },
 	{ value: "socio", label: "Sociologia" },
 	{ value: "geo", label: "Geografia" },
-	{ value: "idama", label: "IDAMA" },
 	{ value: "edfis", label: "Educação Física" },
 	{ value: "ing", label: "Inglês" },
 	{ value: "fil", label: "Filosofia" },
 	{ value: "bio", label: "Biologia" },
-	{ value: "ucabio", label: "UCA (Biologia)" },
-	{ value: "quim", label: "Química" },
-	{ value: "projv", label: "Projeto de Vida" },
-	{ value: "pinte", label: "Projeto Integrador" }
+	{ value: "quim", label: "Química" }
 ];
 
 function getLabelByValue(value) {
