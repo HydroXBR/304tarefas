@@ -1,87 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Detalhes da Tarefa</title>
-	<link rel="stylesheet" href="tarefa.css">
-	<link rel="icon" type="image/png" href="https://s3.amazonaws.com/i.snag.gy/pPSJcD.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Tarefa</title>
+    <link rel="stylesheet" href="tarefa.css">
+    <link rel="icon" type="image/png" href="https://s3.amazonaws.com/i.snag.gy/pPSJcD.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-		<!-- Navbar -->
-		<div class="navbar">
-			<h1>305 Tarefas</h1>
-			<a href="/">Página Inicial</a>
-			<a href="/sobre">Sobre</a>
-			<a href="/horarios">Horários</a>
-			<a href="/add" class="link-adicionar">Adicionar Tarefa</a>
-		</div>
+    <div class="navbar">
+        <h1>305 Tarefas</h1>
+        <a href="/">Página Inicial</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/horarios">Horários</a>
+        <a href="/add" class="link-adicionar">Adicionar Tarefa</a>
+    </div>
 
-		<!-- Container Principal -->
-		<div class="container">
-				<!-- Box do Título da Tarefa -->
-				<div class="box boxx">
-						<h2 id="titulo">Carregando...</h2>
-				</div>
-				<!-- Box da Descrição da Tarefa -->
-				<div class="box">
-						<h2>Descrição</h2>
-						<p class="quebrar" id="descricao">Carregando...</p>
-				</div>
+    <div class="container">
+        <div class="box boxx">
+            <h2 id="titulo">Carregando...</h2>
+        </div>
 
-			<div class="box">
-					<h2>Nível</h2>
-					<p id="nivel">Carregando...</p>
-			</div>
+        <div class="box">
+            <h2>Descrição</h2>
+            <p class="quebrar" id="descricao">Carregando...</p>
+        </div>
 
-				<!-- Box da Disciplina da Tarefa -->
-				<div class="box">
-						<h2>Disciplina</h2>
-						<p id="disciplina">Carregando...</p>
-				</div>
-			
+        <div class="box">
+            <h2>Nível</h2>
+            <p id="nivel">Carregando...</p>
+        </div>
 
-				<!-- Box da Data em que a Tarefa foi Pedida -->
-				<div class="box">
-						<h2>Pedida em</h2>
-						<p id="pedida-em">Carregando...</p>
-				</div>
+        <div class="box">
+            <h2>Disciplina</h2>
+            <p id="disciplina">Carregando...</p>
+        </div>
 
-				<!-- Box da Data de Entrega da Tarefa -->
-				<div class="box">
-						<h2>Entrega</h2>
-						<p id="entrega">Carregando...</p>
-				</div>
+        <div class="box">
+            <h2>Pedida em</h2>
+            <p id="pedida-em">Carregando...</p>
+        </div>
 
-				<!-- Box do Autor da Tarefa -->
-				<div class="box">
-						<h2>Registrado por</h2>
-						<p id="autor">Carregando...</p>
-				</div>
+        <div class="box">
+            <h2>Entrega</h2>
+            <p id="entrega">Carregando...</p>
+        </div>
 
-				<!-- Box dos Comentários da Tarefa -->
-			<div class="box comentarios">
-					<h2>Comentários</h2>
-					<div id="comentarios">
-							<!-- Os comentários serão preenchidos dinamicamente com JavaScript -->
-					</div>
-				<hr style="margin-top: 20px; margin-bottom: 20px;">
-					<!-- Seletor para selecionar o nome -->
-					<div class="seletor-nome">
-							<label for="selecionar-nome">Seu nome:</label>
-							<select id="selecionar-nome">
-							</select>
-					</div>
-					<!-- Espaço para inserir comentários -->
-					<div class="espaco-comentar">
-						
-						<textarea id="novo-comentario" rows="4" placeholder="Digite seu comentário. SELECIONE O SEU NOME, POR FAVOR. Confio na boa fé de vcs kkkkk"></textarea>
-							<button id="enviar-comentario">Enviar</button>
-					</div>
-			</div>
-		</div>
-		<button id="btnVoltar">Voltar</button>
+        <div class="box">
+            <h2>Registrado por</h2>
+            <p id="autor">Carregando...</p>
+        </div>
 
-		<script src="tarefa.js"></script>
+        <div class="box comentarios">
+            <h2>Comentários</h2>
+            <div id="comentarios">
+            </div>
+            <hr style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="seletor-nome">
+                <label for="selecionar-nome">Seu nome:</label>
+                <select id="selecionar-nome"></select>
+            </div>
+            <div class="espaco-comentar">
+                <textarea id="novo-comentario" rows="4" placeholder="Digite seu comentário. SELECIONE O SEU NOME, POR FAVOR. Confio na boa fé de vcs kkkkk"></textarea>
+                <button id="enviar-comentario">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <button id="btnVoltar">Voltar</button>
+
+    <script src="tarefa.js"></script>
 </body>
 </html>
