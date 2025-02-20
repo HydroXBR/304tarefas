@@ -163,6 +163,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 			lembretesHoje.push(lembreteAutomatico);
 		}
 
+		if (diaSemanaAmanha == 1) {
+			const lembreteAutomatico = {
+				title: "Educação Física",
+				desc: "Não esquecer do uniforme na mochila."
+			};
+			lembretesHoje.push(lembreteAutomatico);
+		}
+
 		if (lembretesHoje.length > 0) {
 			const strong = document.createElement("strong");
 			strong.innerHTML = "⚠️ Lembretes extra"
