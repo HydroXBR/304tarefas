@@ -33,12 +33,16 @@ document.addEventListener('DOMContentLoaded', async function() {
 		const tasks = await response.json();
 		tasks.sort((a, b) => b.entrega - a.entrega);
 		
-		tasks1 = tasks.filter(task => {
-			const today = new Date();
-			const todayOnlyDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-			const entregaDate = new Date(task.entrega);
-			const entregaOnlyDate = new Date(entregaDate.getFullYear(), entregaDate.getMonth(), entregaDate.getDate());
-			return entregaOnlyDate >= todayOnlyDate;
+		const tasks1 = tasks.filter(task => {
+		    const now = new Date();
+		    const todayOnlyDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		    const entregaDate = new Date(task.entrega);
+		    const entregaOnlyDate = new Date(entregaDate.getFullYear(), entregaDate.getMonth(), entregaDate.getDate());
+		
+		    if (now.getHours() >= 12) {
+		        return entregaOnlyDate > todayOnlyDate; // Exclui as tarefas de hoje após meio-dia
+		    }
+		    return entregaOnlyDate >= todayOnlyDate; // Inclui as tarefas de hoje antes do meio-dia
 		});
 		
 		const tableBody = document.getElementById('tabela-tarefas');
@@ -75,12 +79,16 @@ document.addEventListener('DOMContentLoaded', async function() {
 		});
 
 		// TABELA DOISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-		tasks2 = tasks.filter(task => {
-			const today = new Date();
-			const todayOnlyDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-			const entregaDate = new Date(task.entrega);
-			const entregaOnlyDate = new Date(entregaDate.getFullYear(), entregaDate.getMonth(), entregaDate.getDate());
-			return entregaOnlyDate < todayOnlyDate;
+		const tasks2 = tasks.filter(task => {
+		    const now = new Date();
+		    const todayOnlyDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		    const entregaDate = new Date(task.entrega);
+		    const entregaOnlyDate = new Date(entregaDate.getFullYear(), entregaDate.getMonth(), entregaDate.getDate());
+		
+		    if (now.getHours() >= 12) {
+		        return entregaOnlyDate <= todayOnlyDate; // Inclui as tarefas de hoje se for 12h ou mais
+		    }
+		    return entregaOnlyDate < todayOnlyDate; // Apenas tarefas expiradas antes de hoje
 		});
 
 		const tableBody2 = document.getElementById('tabela-anteriores');
