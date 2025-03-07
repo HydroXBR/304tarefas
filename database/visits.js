@@ -6,5 +6,5 @@ const visitSchema = Schema({
     days: [{ type: String }] 
 });
 
-const visit = mongoose.model("visits", visitSchema);
+const visit = model("visits", visitSchema);
 export default visit
