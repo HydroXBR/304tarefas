@@ -6,5 +6,4 @@ const visitSchema = new mongoose.Schema({
     days: [{ type: String }] 
 });
 
-const sch = model('visit', visitSchema)
-export default sch
+export const Visit = mongoose.model("visits", visitSchema);
