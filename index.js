@@ -10,7 +10,7 @@ import bodyParser from "body-parser"
 const __dirname = dirname(fileURLToPath(import.meta.url))
 import tarefa from "./database/tarefa.js"
 import lembrete from "./database/lembrete.js"
-import Visit from "./database/visits.js";
+import visit from "./database/visits.js";
 import Db from "mongodb"
 import im from "./db_connect.js"
 const ec = txt => encodeURIComponent(txt)
@@ -65,10 +65,10 @@ app.get('/',function(req,res) {
         	const today = new Date();
         	const todayStr = today.toISOString().split("T")[0]; // Formato YYYY-MM-DD
 
-        	let visitData = await Visit.findOne();
+        	let visitData = await visit.findOne();
 
         	if (!visitData) {
-            		visitData = new Visit({ totalVisits: 1, days: [todayStr] });
+            		visitData = new visit({ totalVisits: 1, days: [todayStr] });
         	} else {
             		visitData.totalVisits += 1;
             		if (!visitData.days.includes(todayStr)) {
