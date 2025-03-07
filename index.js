@@ -58,53 +58,55 @@ app.listen(3000, () => {})
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/interface'));
 
-// Website pages
-app.get('/',function(req,res) {
-	console.log("Access PRINCIPAL: "+ new Date())
+app.get('/', async function(req, res) {
+	console.log("Access PRINCIPAL: " + new Date());
+
 	try {
-        	const today = new Date();
-        	const todayStr = today.toISOString().split("T")[0]; // Formato YYYY-MM-DD
+		const today = new Date();
+		const todayStr = today.toISOString().split("T")[0]; // Formato YYYY-MM-DD
 
-        	let visitData = await visit.findOne();
+		let visitData = await visit.findOne();
 
-        	if (!visitData) {
-            		visitData = new visit({ totalVisits: 1, days: [todayStr] });
-        	} else {
-            		visitData.totalVisits += 1;
-            		if (!visitData.days.includes(todayStr)) {
-                		visitData.days.push(todayStr);
-            		}
-       	 	}
+		if (!visitData) {
+			visitData = new visit({ totalVisits: 1, days: [todayStr] });
+		} else {
+			visitData.totalVisits += 1;
+			if (!visitData.days.includes(todayStr)) {
+				visitData.days.push(todayStr);
+			}
+		}
 
-        	await visitData.save();
-    	} catch (err) {
-        	console.error("Erro ao registrar visita:", err);
-    	}
-	res.sendFile(__dirname + '/interface/index.html')
+		await visitData.save();
+	} catch (err) {
+		console.error("Erro ao registrar visita:", err);
+	}
+
+	res.sendFile(__dirname + '/interface/index.html');
 });
+app.get('/#', async function(req, res) {
+	console.log("Access PRINCIPAL: " + new Date());
 
-app.get('/#',function(req,res) {
-	console.log("Access PRINCIPAL: "+ new Date())
 	try {
-        	const today = new Date();
-        	const todayStr = today.toISOString().split("T")[0]; // Formato YYYY-MM-DD
+		const today = new Date();
+		const todayStr = today.toISOString().split("T")[0]; // Formato YYYY-MM-DD
 
-        	let visitData = await visit.findOne();
+		let visitData = await visit.findOne();
 
-        	if (!visitData) {
-            		visitData = new visit({ totalVisits: 1, days: [todayStr] });
-        	} else {
-            		visitData.totalVisits += 1;
-            		if (!visitData.days.includes(todayStr)) {
-                		visitData.days.push(todayStr);
-            		}
-       	 	}
+		if (!visitData) {
+			visitData = new visit({ totalVisits: 1, days: [todayStr] });
+		} else {
+			visitData.totalVisits += 1;
+			if (!visitData.days.includes(todayStr)) {
+				visitData.days.push(todayStr);
+			}
+		}
 
-        	await visitData.save();
-    	} catch (err) {
-        	console.error("Erro ao registrar visita:", err);
-    	}
-	res.sendFile(__dirname + '/interface/index.html')
+		await visitData.save();
+	} catch (err) {
+		console.error("Erro ao registrar visita:", err);
+	}
+
+	res.sendFile(__dirname + '/interface/index.html');
 });
 
 app.get('/horarios',function(req,res) {
