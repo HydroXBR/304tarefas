@@ -89,10 +89,10 @@ app.get('/#',function(req,res) {
         	const today = new Date();
         	const todayStr = today.toISOString().split("T")[0]; // Formato YYYY-MM-DD
 
-        	let visitData = await Visit.findOne();
+        	let visitData = await visit.findOne();
 
         	if (!visitData) {
-            		visitData = new Visit({ totalVisits: 1, days: [todayStr] });
+            		visitData = new visit({ totalVisits: 1, days: [todayStr] });
         	} else {
             		visitData.totalVisits += 1;
             		if (!visitData.days.includes(todayStr)) {
