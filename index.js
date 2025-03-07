@@ -10,7 +10,7 @@ import bodyParser from "body-parser"
 const __dirname = dirname(fileURLToPath(import.meta.url))
 import tarefa from "./database/tarefa.js"
 import lembrete from "./database/lembrete.js"
-import { Visit } from "./database/visits.js";
+import Visit from "./database/visits.js";
 import Db from "mongodb"
 import im from "./db_connect.js"
 const ec = txt => encodeURIComponent(txt)
