@@ -17,7 +17,7 @@ const schema = Schema({
 	entrega: { type: Number, required: true },
 	author: { type: String, required: true },
 	comments: [comentarioSchema],
-	registered: { type: Number, default: new Date().getTime() },
+	registered: { type: Number, default: new Date().getTime() }
 })
 
 const tarefa = model('205tarefas', schema)
