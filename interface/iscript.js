@@ -138,17 +138,21 @@ document.addEventListener('DOMContentLoaded', async function() {
 	    }
 	
 	    const agora = new Date();
-	    const hoje = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate(), 7); // Hoje às 07h UTC-4
-	    const hojet = hoje.getTime();
+	    const offsetUTC4 = -4 * 60; // UTC-4 em minutos
+	    const agoraUTC4 = new Date(agora.getTime() + offsetUTC4 * 60 * 1000);
 	
+	    const hojeUTC4 = new Date(agoraUTC4);
+	    hojeUTC4.setHours(7, 0, 0, 0); // Hoje às 07h UTC-4
+	
+	    const amanhaUTC4 = new Date(hojeUTC4);
+	    amanhaUTC4.setDate(hojeUTC4.getDate() + 1); // Amanhã às 07h UTC-4
+	
+	    // Filtra lembretes que estão no intervalo entre hoje às 07h e amanhã às 07h
 	    const lembretesHoje = lembretes.filter(lembrete => {
 	        const dataLembrete = new Date(lembrete.date);
-	        const dataLembreteUTC = new Date(dataLembrete.getFullYear(), dataLembrete.getMonth(), dataLembrete.getDate(), 7);
-	        return hojet === dataLembreteUTC.getTime();
+	        const dataLembreteUTC4 = new Date(dataLembrete.getTime() + offsetUTC4 * 60 * 1000);
+	        return dataLembreteUTC4 >= hojeUTC4 && dataLembreteUTC4 < amanhaUTC4;
 	    });
-	
-	    const amanha = new Date(agora);
-	    amanha.setDate(agora.getDate() + 1);
 	
 	    const feriadosNacionais = [
 	        "01-01", "04-21", "05-01", "09-07",
@@ -168,14 +172,15 @@ document.addEventListener('DOMContentLoaded', async function() {
 	        return novaData;
 	    }
 	
-	    if (amanha.getDate() === 5 || amanha.getDate() === 20) {
-	        let dataRevista = new Date(amanha);
+	    // Adiciona lembretes automáticos para revista de cabelo
+	    if (amanhaUTC4.getDate() === 5 || amanhaUTC4.getDate() === 20) {
+	        let dataRevista = new Date(amanhaUTC4);
 	
 	        if (dataRevista.getDay() === 0 || dataRevista.getDay() === 6 || ehFeriado(dataRevista)) {
 	            dataRevista = proximoDiaUtil(dataRevista);
 	        }
 	
-	        if (dataRevista.getDate() === proximoDiaUtil(amanha).getDate()) {
+	        if (dataRevista.getDate() === proximoDiaUtil(amanhaUTC4).getDate()) {
 	            const lembreteAutomatico = {
 	                title: "Revista de Cabelo",
 	                desc: "Amanhã tem revista de cabelo masculina!"
@@ -184,7 +189,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 	        }
 	    }
 	
-	    if (amanha.getDay() === 1) {
+	    // Adiciona lembretes automáticos para educação física
+	    if (amanhaUTC4.getDay() === 1) {
 	        const lembreteAutomatico = {
 	            title: "Educação Física",
 	            desc: "Não esquecer do uniforme na mochila."
@@ -192,8 +198,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 	        lembretesHoje.push(lembreteAutomatico);
 	    }
 	
-	    const horarioAtualUTC4 = agora.getUTCHours() - 4;
-	    const deveSubstituirAmanha = horarioAtualUTC4 >= 0;
+	    // Verifica se estamos no intervalo entre 0h e 7h do dia seguinte
+	    const deveSubstituirAmanha = agoraUTC4 >= hojeUTC4 && agoraUTC4 < amanhaUTC4;
 	
 	    if (lembretesHoje.length > 0) {
 	        const strong = document.createElement("strong");
