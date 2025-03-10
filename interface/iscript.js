@@ -148,57 +148,43 @@ document.addEventListener('DOMContentLoaded', async function() {
 	    });
 	
 	    const amanha = new Date(agora);
-	    amanha.setDate(hoje.getDate() + 1);
+	    amanha.setDate(agora.getDate() + 1);
 	
-	    const diaAmanha = amanha.getDate();
-	    const diaSemanaAmanha = amanha.getDay();
+	    const feriadosNacionais = [
+	        "01-01", "04-21", "05-01", "09-07",
+	        "10-12", "11-02", "11-15", "12-25"
+	    ];
 	
-		const feriadosNacionais = [
-		    "01-01", // Confraternização Universal
-		    "04-21", // Tiradentes
-		    "05-01", // Dia do Trabalho
-		    "09-07", // Independência do Brasil
-		    "10-12", // Nossa Senhora Aparecida
-		    "11-02", // Finados
-		    "11-15", // Proclamação da República
-		    "12-25"  // Natal
-		];
-		
-		function ehFeriado(data) {
-		    const dataFormatada = `${String(data.getMonth() + 1).padStart(2, '0')}-${String(data.getDate()).padStart(2, '0')}`;
-		    return feriadosNacionais.includes(dataFormatada);
-		}
-		
-		function proximoDiaUtil(data) {
-		    const novaData = new Date(data);
-		    while (novaData.getDay() === 0 || novaData.getDay() === 6 || ehFeriado(novaData)) {
-		        novaData.setDate(novaData.getDate() + 1);
-		    }
-		    return novaData;
-		}
-		
-		// Data atual
-		const agora = new Date();
-		const amanha = new Date(agora);
-		amanha.setDate(agora.getDate() + 1);
-		
-		if (amanha.getDate() === 5 || amanha.getDate() === 20) {
-		    let dataRevista = new Date(amanha);
-		
-		    if (dataRevista.getDay() === 0 || dataRevista.getDay() === 6 || ehFeriado(dataRevista)) {
-		        dataRevista = proximoDiaUtil(dataRevista);
-		    }
-		
-		    if (dataRevista.getDate() === amanha.getDate()) {
-		        const lembreteAutomatico = {
-		            title: "Revista de Cabelo",
-		            desc: "Amanhã tem revista de cabelo masculina!"
-		        };
-		        lembretesHoje.push(lembreteAutomatico);
-		    }
-		}
+	    function ehFeriado(data) {
+	        const dataFormatada = `${String(data.getMonth() + 1).padStart(2, '0')}-${String(data.getDate()).padStart(2, '0')}`;
+	        return feriadosNacionais.includes(dataFormatada);
+	    }
 	
-	    if (diaSemanaAmanha === 1) {
+	    function proximoDiaUtil(data) {
+	        const novaData = new Date(data);
+	        while (novaData.getDay() === 0 || novaData.getDay() === 6 || ehFeriado(novaData)) {
+	            novaData.setDate(novaData.getDate() + 1);
+	        }
+	        return novaData;
+	    }
+	
+	    if (amanha.getDate() === 5 || amanha.getDate() === 20) {
+	        let dataRevista = new Date(amanha);
+	
+	        if (dataRevista.getDay() === 0 || dataRevista.getDay() === 6 || ehFeriado(dataRevista)) {
+	            dataRevista = proximoDiaUtil(dataRevista);
+	        }
+	
+	        if (dataRevista.getDate() === proximoDiaUtil(amanha).getDate()) {
+	            const lembreteAutomatico = {
+	                title: "Revista de Cabelo",
+	                desc: "Amanhã tem revista de cabelo masculina!"
+	            };
+	            lembretesHoje.push(lembreteAutomatico);
+	        }
+	    }
+	
+	    if (amanha.getDay() === 1) {
 	        const lembreteAutomatico = {
 	            title: "Educação Física",
 	            desc: "Não esquecer do uniforme na mochila."
@@ -223,8 +209,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 	
 	            const descricao = document.createElement('span');
 	            descricao.textContent = ' | ' + (
-	                deveSubstituirAmanha 
-	                    ? lembrete.desc.replace(/\bamanhã\b/gi, "hoje") 
+	                deveSubstituirAmanha
+	                    ? lembrete.desc.replace(/\bamanhã\b/gi, "hoje")
 	                    : lembrete.desc
 	            );
 	
@@ -239,4 +225,5 @@ document.addEventListener('DOMContentLoaded', async function() {
 	} catch (error) {
 	    console.error('Erro ao obter lembretes:', error);
 	}
+
 });
