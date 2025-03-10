@@ -124,77 +124,119 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 	// TABELAAAAAAAA
 	try {
-		const response = await fetch('/lembretes'); 
-		const lembretes = await response.json();
-
-		const containerLembretes = document.getElementById('container-lembretes');
-		containerLembretes.innerHTML = ''; 
-
-		function formatarData2(data) {
-			const ano = data.getFullYear();
-			const mes = data.getMonth() + 1; 
-			const dia = data.getDate();
-
-			const anoFormatado = String(ano).padStart(4, '0');
-			const mesFormatado = String(mes).padStart(2, '0');
-			const diaFormatado = String(dia).padStart(2, '0');
-
-			const dataFormatada = `${anoFormatado}-${mesFormatado}-${diaFormatado}`;
-
-			return dataFormatada;
+	    const response = await fetch('/lembretes');
+	    const lembretes = await response.json();
+	
+	    const containerLembretes = document.getElementById('container-lembretes');
+	    containerLembretes.innerHTML = '';
+	
+	    function formatarData2(data) {
+	        const ano = data.getFullYear();
+	        const mes = String(data.getMonth() + 1).padStart(2, '0');
+	        const dia = String(data.getDate()).padStart(2, '0');
+	        return `${ano}-${mes}-${dia}`;
+	    }
+	
+	    const agora = new Date();
+	    const hoje = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate(), 7); // Hoje às 07h UTC-4
+	    const hojet = hoje.getTime();
+	
+	    const lembretesHoje = lembretes.filter(lembrete => {
+	        const dataLembrete = new Date(lembrete.date);
+	        const dataLembreteUTC = new Date(dataLembrete.getFullYear(), dataLembrete.getMonth(), dataLembrete.getDate(), 7);
+	        return hojet === dataLembreteUTC.getTime();
+	    });
+	
+	    const amanha = new Date(agora);
+	    amanha.setDate(hoje.getDate() + 1);
+	
+	    const diaAmanha = amanha.getDate();
+	    const diaSemanaAmanha = amanha.getDay();
+	
+		const feriadosNacionais = [
+		    "01-01", // Confraternização Universal
+		    "04-21", // Tiradentes
+		    "05-01", // Dia do Trabalho
+		    "09-07", // Independência do Brasil
+		    "10-12", // Nossa Senhora Aparecida
+		    "11-02", // Finados
+		    "11-15", // Proclamação da República
+		    "12-25"  // Natal
+		];
+		
+		function ehFeriado(data) {
+		    const dataFormatada = `${String(data.getMonth() + 1).padStart(2, '0')}-${String(data.getDate()).padStart(2, '0')}`;
+		    return feriadosNacionais.includes(dataFormatada);
 		}
-
-		const hoje = new Date();
-		const hojet = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
-		const lembretesHoje = lembretes.filter(lembrete => formatarData2(new Date()) == lembrete.date)
-
-		const amanha = new Date();
-		amanha.setDate(hoje.getDate() + 1);
-
-		const diaAmanha = amanha.getDate();
-		const mesAmanha = amanha.getMonth() + 1;
-		const diaSemanaAmanha = amanha.getDay()
-
-		if ((diaAmanha === 5 || diaAmanha === 20) && diaSemanaAmanha !== 0 && diaSemanaAmanha !== 6) {
-			const lembreteAutomatico = {
-				title: "Revista de Cabelo",
-				desc: "Amanhã tem revista de cabelo masculina!"
-			};
-			lembretesHoje.push(lembreteAutomatico);
+		
+		function proximoDiaUtil(data) {
+		    const novaData = new Date(data);
+		    while (novaData.getDay() === 0 || novaData.getDay() === 6 || ehFeriado(novaData)) {
+		        novaData.setDate(novaData.getDate() + 1);
+		    }
+		    return novaData;
 		}
-
-		if (diaSemanaAmanha == 1) {
-			const lembreteAutomatico = {
-				title: "Educação Física",
-				desc: "Não esquecer do uniforme na mochila."
-			};
-			lembretesHoje.push(lembreteAutomatico);
+		
+		// Data atual
+		const agora = new Date();
+		const amanha = new Date(agora);
+		amanha.setDate(agora.getDate() + 1);
+		
+		if (amanha.getDate() === 5 || amanha.getDate() === 20) {
+		    let dataRevista = new Date(amanha);
+		
+		    if (dataRevista.getDay() === 0 || dataRevista.getDay() === 6 || ehFeriado(dataRevista)) {
+		        dataRevista = proximoDiaUtil(dataRevista);
+		    }
+		
+		    if (dataRevista.getDate() === amanha.getDate()) {
+		        const lembreteAutomatico = {
+		            title: "Revista de Cabelo",
+		            desc: "Amanhã tem revista de cabelo masculina!"
+		        };
+		        lembretesHoje.push(lembreteAutomatico);
+		    }
 		}
-
-		if (lembretesHoje.length > 0) {
-			const strong = document.createElement("strong");
-			strong.innerHTML = "⚠️ Lembretes extra"
-			containerLembretes.appendChild(strong);
-			lembretesHoje.forEach(lembrete => {
-					
-				const divLembrete = document.createElement('div');
-				divLembrete.classList.add('lembrete');
-
-				const titulo = document.createElement('strong');
-				titulo.textContent = lembrete.title;
-
-				const descricao = document.createElement('span');
-				descricao.textContent = ' | ' + lembrete.desc;
-
-				divLembrete.appendChild(titulo);
-				divLembrete.appendChild(descricao);
-
-				containerLembretes.appendChild(divLembrete);
-		});
-		} else {
-			containerLembretes.style.display = 'none';
-		}
+	
+	    if (diaSemanaAmanha === 1) {
+	        const lembreteAutomatico = {
+	            title: "Educação Física",
+	            desc: "Não esquecer do uniforme na mochila."
+	        };
+	        lembretesHoje.push(lembreteAutomatico);
+	    }
+	
+	    const horarioAtualUTC4 = agora.getUTCHours() - 4;
+	    const deveSubstituirAmanha = horarioAtualUTC4 >= 0;
+	
+	    if (lembretesHoje.length > 0) {
+	        const strong = document.createElement("strong");
+	        strong.innerHTML = "⚠️ Lembretes extra";
+	        containerLembretes.appendChild(strong);
+	
+	        lembretesHoje.forEach(lembrete => {
+	            const divLembrete = document.createElement('div');
+	            divLembrete.classList.add('lembrete');
+	
+	            const titulo = document.createElement('strong');
+	            titulo.textContent = lembrete.title;
+	
+	            const descricao = document.createElement('span');
+	            descricao.textContent = ' | ' + (
+	                deveSubstituirAmanha 
+	                    ? lembrete.desc.replace(/\bamanhã\b/gi, "hoje") 
+	                    : lembrete.desc
+	            );
+	
+	            divLembrete.appendChild(titulo);
+	            divLembrete.appendChild(descricao);
+	
+	            containerLembretes.appendChild(divLembrete);
+	        });
+	    } else {
+	        containerLembretes.style.display = 'none';
+	    }
 	} catch (error) {
-			console.error('Erro ao obter lembretes:', error);
+	    console.error('Erro ao obter lembretes:', error);
 	}
 });
