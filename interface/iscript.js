@@ -137,15 +137,13 @@ document.addEventListener('DOMContentLoaded', async function() {
 	        return `${ano}-${mes}-${dia}`;
 	    }
 	
-	    const agora = new Date();
-	    const offsetUTC4 = -4 * 60; // UTC-4 em minutos
-	    const agoraUTC4 = new Date(agora.getTime() + offsetUTC4 * 60 * 1000);
+	    const agoraUTC4 = new Date()
 	
 	    const hojeUTC4 = new Date(agoraUTC4);
-	    hojeUTC4.setHours(7, 0, 0, 0); // Hoje às 07h UTC-4
+	    hojeUTC4.setHours(3, 0, 0, 0)
 	
 	    const amanhaUTC4 = new Date(hojeUTC4);
-	    amanhaUTC4.setDate(hojeUTC4.getDate() + 1); // Amanhã às 07h UTC-4
+	    amanhaUTC4.setDate(hojeUTC4.getDate() + 1); 
 	
 	    // Filtra lembretes que estão no intervalo entre hoje às 07h e amanhã às 07h
 	    const lembretesHoje = lembretes.filter(lembrete => {
