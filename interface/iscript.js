@@ -145,11 +145,18 @@ document.addEventListener('DOMContentLoaded', async function() {
 	    const amanhaUTC4 = new Date(hojeUTC4);
 	    amanhaUTC4.setDate(hojeUTC4.getDate() + 1); 
 	
-	    // Filtra lembretes que estão no intervalo entre hoje às 07h e amanhã às 07h
 	    const lembretesHoje = lembretes.filter(lembrete => {
-    		const dataLembrete = new Date(lembrete.date);
-    		return dataLembrete >= hojeUTC4 && dataLembrete < amanhaUTC4;
-	    });
+		const dataLembrete = formatarData2(new Date(lembrete.date))
+		const formattoday = formatarData2(new Date())
+		const hours = new Date().getHours()
+		
+		if (hours < 7) {
+			let yesterday = formatarData2(new Date(Date.now() - 86400000))
+		        return dataLembrete === formattoday || dataLembrete === yesterday
+		} else {
+		        return dataLembrete === formattoday
+		}
+	})
 	
 	    const feriadosNacionais = [
 	        "01-01", "04-21", "05-01", "09-07",
