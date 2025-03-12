@@ -147,9 +147,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 	
 	    // Filtra lembretes que estão no intervalo entre hoje às 07h e amanhã às 07h
 	    const lembretesHoje = lembretes.filter(lembrete => {
-	        const dataLembrete = new Date(lembrete.date);
-	        const dataLembreteUTC4 = new Date(dataLembrete.getTime() + offsetUTC4 * 60 * 1000);
-	        return dataLembreteUTC4 >= hojeUTC4 && dataLembreteUTC4 < amanhaUTC4;
+    		const dataLembrete = new Date(lembrete.date);
+    		return dataLembrete >= hojeUTC4 && dataLembrete < amanhaUTC4;
 	    });
 	
 	    const feriadosNacionais = [
