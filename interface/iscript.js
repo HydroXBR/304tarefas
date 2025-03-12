@@ -146,17 +146,15 @@ document.addEventListener('DOMContentLoaded', async function() {
 	    amanhaUTC4.setDate(hojeUTC4.getDate() + 1); 
 	
 	    const lembretesHoje = lembretes.filter(lembrete => {
-		const dataLembrete = formatarData2(new Date(lembrete.date))
-		const formattoday = formatarData2(new Date())
-		const hours = new Date().getHours()
+		    const dataLembrete = formatarData2(new Date(lembrete.date));
+		    const hoje = formatarData2(new Date());
 		
-		if (hours < 7) {
-			let yesterday = formatarData2(new Date(Date.now() - 86400000))
-		        return dataLembrete === formattoday || dataLembrete === yesterday
-		} else {
-		        return dataLembrete === formattoday
-		}
-	})
+		    const agora = new Date();
+		    const incluirOntem = agora.getHours() < 7;
+		    const ontem = formatarData2(new Date(agora.setDate(agora.getDate() - 1)));
+		
+		    return dataLembrete === hoje || (incluirOntem && dataLembrete === ontem);
+		});
 	
 	    const feriadosNacionais = [
 	        "01-01", "04-21", "05-01", "09-07",
