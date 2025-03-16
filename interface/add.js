@@ -180,6 +180,13 @@ const alunos = [
   }
 ];
 
+const urlParams = new URLSearchParams(window.location.search);
+const admin = urlParams.get("admin")
+
+if(admin == "true"){
+	alunos.push({"complete": "Isaías Nascimento", "id":"isaias"})
+}
+
 const disciplinas = [
 	{ value: "art", label: "Artes" },
 	{ value: "port", label: "Português" },
