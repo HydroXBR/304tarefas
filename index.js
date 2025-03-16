@@ -117,7 +117,6 @@ app.get('/horarios',function(req,res) {
 app.get('/apagar', async function(req, res) {
 	console.log("Access APAGAR: " + new Date())
 
-	if (req.query.token == process.env.token2) {
 		if (req.query.id) {
 			try {
 				const idTarefa = req.query.id;
@@ -155,9 +154,6 @@ app.get('/apagar', async function(req, res) {
 				res.status(500).send('Erro ao remover tarefas antigas.');
 			}
 		}
-	} else {
-		res.sendStatus(401);
-	}
 });
 
 app.get('/sobre',function(req,res) {
