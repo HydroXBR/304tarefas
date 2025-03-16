@@ -20,5 +20,5 @@ const schema = Schema({
 	registered: { type: Number, default: new Date().getTime() }
 })
 
-const tarefa = model('205tarefas', schema)
+const tarefa = model('304tarefas', schema)
 export default tarefa
