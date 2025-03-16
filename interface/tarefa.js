@@ -166,6 +166,10 @@ const alunos = [
   {
     "complete": "Yuri Silveira",
     "id": "yuri"
+  },
+  {
+    "complete": "Isaías Nascimento",
+    "id": "isaias"
   }
 ];
 
