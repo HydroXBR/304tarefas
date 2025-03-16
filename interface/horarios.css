@@ -24,13 +24,13 @@ body {
 
 h2 {
     text-align: center;
-    color: #004aad;
+    color: #4fa3ff;
     font-size: 1.8em;
     margin-bottom: 20px;
 }
 
 .navbar {
-    background: rgba(0, 34, 85, 0.9);
+    background: rgba(0, 7, 43, 0.9);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: #fff;
@@ -48,7 +48,7 @@ h2 {
     margin: 0;
     font-size: 1.8em;
     font-weight: 700;
-    color: #004aad;
+    color: #4fa3ff;
 }
 
 .nav-links {
@@ -66,7 +66,7 @@ h2 {
 }
 
 .navbar a:hover {
-    color: #004aad;
+    color: #4fa3ff;
 }
 
 .navbar a.link-adicionar {
@@ -89,7 +89,7 @@ h2 {
         display: none; 
         flex-direction: column;
         width: 100%;
-        background-color: rgba(0, 34, 85, 0.9);
+        background-color: rgba(0, 7, 43, 0.9);
         border-radius: 8px;
         padding: 10px 0;
         margin-top: 10px;
@@ -108,7 +108,7 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #00214e;
+    background-color: #0c1248;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -117,22 +117,22 @@ table {
 th, td {
     padding: 12px;
     text-align: center;
-    border-bottom: 1px solid #004aad;
+    border-bottom: 1px solid #4fa3ff;
     color: #e0e0e0;
 }
 
 th {
-    background-color: #00337d;
-    color: #004aad;
+    background-color: #1c2a6d;
+    color: #4fa3ff;
     font-weight: 600;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #001b4e;
+    background-color: #0a0f3a;
 }
 
 tbody tr:hover {
-    background-color: rgba(0, 74, 173, 0.1);
+    background-color: rgba(79, 163, 255, 0.1);
     transition: background-color 0.3s;
 }
 
