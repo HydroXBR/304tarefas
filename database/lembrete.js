@@ -9,5 +9,5 @@ const schema = Schema({
 	registered: { type: Number, default: new Date().getTime() },
 })
 
-const lembrete = model('205lembretes', schema)
+const lembrete = model('304lembretes', schema)
 export default lembrete
