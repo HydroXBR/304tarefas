@@ -6,5 +6,5 @@ const visitSchema = Schema({
     days: [{ type: String }] 
 });
 
-const visit = model("visits", visitSchema);
+const visit = model("304visits", visitSchema);
 export default visit
