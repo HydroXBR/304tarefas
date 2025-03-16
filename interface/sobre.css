@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000b1f;
+    background-color: #00072b;
     color: #e0e0e0;
     margin: 0;
     padding: 0;
@@ -17,14 +17,14 @@ body {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #001b3d;
+    background-color: #0c1248;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
     text-align: center;
-    color: #004aad;
+    color: #4fa3ff;
     font-weight: 700;
     font-size: 2.2em;
     margin-bottom: 20px;
@@ -38,7 +38,7 @@ p {
 }
 
 .navbar {
-    background: rgba(0, 27, 61, 0.9);
+    background: rgba(0, 7, 43, 0.9);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: #fff;
@@ -56,7 +56,7 @@ p {
     margin: 0;
     font-size: 1.8em;
     font-weight: 700;
-    color: #004aad;
+    color: #4fa3ff;
 }
 
 .nav-links a {
@@ -68,7 +68,7 @@ p {
 }
 
 .navbar a:hover {
-    color: #004aad;
+    color: #4fa3ff;
 }
 
 .navbar a.link-adicionar {
@@ -76,7 +76,6 @@ p {
     font-weight: 600;
 }
 
-/* Tabela */
 .table-resp {
     overflow-x: auto;
     margin-bottom: 30px;
@@ -85,7 +84,7 @@ p {
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #001b3d;
+    background-color: #0c1248;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -94,35 +93,34 @@ table {
 th, td {
     padding: 14px;
     text-align: left;
-    border-bottom: 1px solid #003070;
+    border-bottom: 1px solid #1c2a6d;
     color: #e0e0e0;
 }
 
 th {
-    background-color: #002b5c;
-    color: #004aad;
+    background-color: #1c2a6d;
+    color: #4fa3ff;
     font-weight: 600;
     font-size: 1.1em;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #00152d;
+    background-color: #0a0f3a;
 }
 
 tbody tr:hover {
-    background-color: rgba(0, 74, 173, 0.2);
+    background-color: rgba(79, 163, 255, 0.1);
     transition: background-color 0.3s;
 }
 
-/* Inputs */
 input[type="text"],
 input[type="date"] {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
-    border: 1px solid #004aad;
+    border: 1px solid #4fa3ff;
     border-radius: 8px;
-    background-color: #001b3d;
+    background-color: #0c1248;
     color: #e0e0e0;
     font-family: 'Inter', sans-serif;
     font-size: 1em;
@@ -131,14 +129,14 @@ input[type="date"] {
 
 input[type="text"]:focus,
 input[type="date"]:focus {
-    border-color: #0074ff;
+    border-color: #3b8ad9;
     outline: none;
 }
 
 input[type="submit"] {
     width: 100%;
     padding: 14px;
-    background-color: #004aad;
+    background-color: #4fa3ff;
     color: white;
     border: none;
     border-radius: 8px;
@@ -149,5 +147,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0074ff;
+    background-color: #3b8ad9;
 }
