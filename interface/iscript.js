@@ -153,8 +153,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 		    const incluirOntem = agora.getHours() < 7;
 		    const ontem = formatarData2(new Date(agora.setDate(agora.getDate() - 1)));
 		
-		    console.log({ dataLembrete, hoje, ontem, incluirOntem });
-		
 		    return dataLembrete === hoje || (incluirOntem && dataLembrete === ontem);
 		});
 	
