@@ -146,12 +146,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 	    amanhaUTC4.setDate(hojeUTC4.getDate() + 1); 
 	
 	    const lembretesHoje = lembretes.filter(lembrete => {
-		    const dataLembrete = formatarData2(new Date(lembrete.date));
+		    const dataLembrete = formatarData2(new Date(lembrete.date + "T00:00:00"));
 		    const hoje = formatarData2(new Date());
 		
 		    const agora = new Date();
 		    const incluirOntem = agora.getHours() < 7;
 		    const ontem = formatarData2(new Date(agora.setDate(agora.getDate() - 1)));
+		
+		    console.log({ dataLembrete, hoje, ontem, incluirOntem });
 		
 		    return dataLembrete === hoje || (incluirOntem && dataLembrete === ontem);
 		});
