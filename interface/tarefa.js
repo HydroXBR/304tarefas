@@ -8,160 +8,164 @@ document.getElementById('menuIcon').addEventListener('click', function () {
 
 const alunos = [
   {
-    "complete": "Addlynes Avelino",
-    "id": "addlynes"
+    "complete": "Agnus Silveira",
+    "id": "agnus"
   },
   {
-    "complete": "Amanda Luizy",
-    "id": "luizy"
+    "complete": "Alana Larissa",
+    "id": "alana"
   },
   {
-    "complete": "Ana Júlia",
-    "id": "ajulia"
+    "complete": "Ana Luiza",
+    "id": "amassulo"
   },
   {
-    "complete": "Ana Laura",
-    "id": "alaura"
+    "complete": "Ana Victoria",
+    "id": "avictoria"
   },
   {
-    "complete": "Anna Paula",
-    "id": "annap"
+    "complete": "Anna Jaques",
+    "id": "annar"
   },
   {
-    "complete": "Beatriz Moreira",
-    "id": "bmoreira"
+    "complete": "Asaphy Santana",
+    "id": "asaphy"
   },
   {
-    "complete": "Carla Isabela",
-    "id": "carla"
+    "complete": "Benjamim Augusto",
+    "id": "benjamim"
   },
   {
-    "complete": "Carlos Eduardo",
-    "id": "ceduardo"
+    "complete": "Caleb Alves",
+    "id": "caleb"
   },
   {
-    "complete": "Derick Mendes",
-    "id": "derick"
+    "complete": "Carla Mayane",
+    "id": "carlam"
   },
   {
-    "complete": "Emanuel Kalebe",
-    "id": "kalebe"
+    "complete": "Carlos Augusto",
+    "id": "carlosa"
   },
   {
-    "complete": "Isaías Nascimento",
-    "id": "isaias"
+    "complete": "Davi Azevedo",
+    "id": "davi"
   },
   {
-    "complete": "Izabele Miranda",
-    "id": "izabele"
+    "complete": "Elias Silva",
+    "id": "elias"
   },
   {
-    "complete": "Jaqueline Catunda",
-    "id": "jaque"
+    "complete": "Eliseu Lima",
+    "id": "eliseu"
   },
   {
-    "complete": "Jennifer Gurgel",
-    "id": "jennifer"
+    "complete": "Eunice Valesca",
+    "id": "eunice"
   },
   {
-    "complete": "João Diego",
-    "id": "jdiego"
+    "complete": "Fernanda Brito",
+    "id": "fernanda"
   },
   {
-    "complete": "José Henrique",
-    "id": "jhenri"
+    "complete": "Giselle Veiga",
+    "id": "giselle"
   },
   {
-    "complete": "Josué Souto",
-    "id": "josue"
+    "complete": "Grazi Mirelly",
+    "id": "grazi"
   },
   {
-    "complete": "Júlia Dianny",
-    "id": "juliad"
+    "complete": "Ilanna Adrião",
+    "id": "ilanna"
   },
   {
-    "complete": "Laura Albuquerque",
-    "id": "laura"
+    "complete": "Iennyfer Laís",
+    "id": "iennyfer"
   },
   {
-    "complete": "Lauro Tomaz",
-    "id": "lauro"
+    "complete": "Joana Victoria",
+    "id": "joana"
   },
   {
-    "complete": "Letícia Dayanne",
-    "id": "leticia"
+    "complete": "João Victor",
+    "id": "joaov"
   },
   {
-    "complete": "Livinny Batalha",
-    "id": "livinny"
+    "complete": "Kamille Sousa",
+    "id": "kamille"
   },
   {
-    "complete": "Lohannah Katharina",
-    "id": "lohannah"
+    "complete": "Karen Santos",
+    "id": "karen"
   },
   {
-    "complete": "Lucas Daniel",
-    "id": "ldaniel"
+    "complete": "Larissa Souza",
+    "id": "larissa"
   },
   {
-    "complete": "Lucas Prestes",
-    "id": "lprestes"
+    "complete": "Luana Dias",
+    "id": "luana"
   },
   {
-    "complete": "Luiz Gustavo",
-    "id": "luizg"
+    "complete": "Luiz Miguel",
+    "id": "luiz"
   },
   {
-    "complete": "Lyzbrenda Frota",
-    "id": "lyzbrenda"
+    "complete": "Maria Eduarda Viegas",
+    "id": "mariav"
   },
   {
-    "complete": "Maria Eduarda Cruz",
-    "id": "mcruz"
+    "complete": "Maria Lívia",
+    "id": "marial"
   },
   {
-    "complete": "Maria Eduarda dos Anjos",
-    "id": "manjos"
+    "complete": "Maria Luísa",
+    "id": "marialu"
   },
   {
-    "complete": "Maria Isabelle",
-    "id": "misabelle"
+    "complete": "Maria Pietra",
+    "id": "mariap"
   },
   {
-    "complete": "Nicolas Barboza",
-    "id": "nicolas"
+    "complete": "Mateus Guilherme",
+    "id": "mateus"
   },
   {
-    "complete": "Nicole Maciel",
-    "id": "nmaciel"
+    "complete": "Nathália Brito",
+    "id": "nathalia"
   },
   {
-    "complete": "Nicole Lopes",
-    "id": "nlopes"
+    "complete": "Paulo André",
+    "id": "paulo"
   },
   {
-    "complete": "Nicolly Franco",
-    "id": "nicolly"
+    "complete": "Paulo Iunio",
+    "id": "paulom"
   },
   {
-    "complete": "Roberta Cambriai",
-    "id": "roberta"
+    "complete": "Pedro Lucas",
+    "id": "pedrob"
   },
   {
-    "complete": "Safira Tomiko",
-    "id": "safira"
+    "complete": "Pedro Lucas",
+    "id": "pedros"
   },
   {
-    "complete": "Thicyane Fernanda",
-    "id": "thicyane"
+    "complete": "Raquel Benarrós",
+    "id": "raquel"
   },
   {
-    "complete": "Ulysses Vidal",
-    "id": "ulysses"
+    "complete": "Ruydson Thiago",
+    "id": "ruydson"
   },
   {
-    "complete": "Vitória Lavínia",
-    "id": "vitoria"
+    "complete": "Sara Lemos",
+    "id": "sara"
+  },
+  {
+    "complete": "Yuri Silveira",
+    "id": "yuri"
   }
 ];
 
