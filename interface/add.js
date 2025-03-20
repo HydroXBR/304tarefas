@@ -184,10 +184,7 @@ const alunos = [
   }
 ];
 
-const urlParams = new URLSearchParams(window.location.search);
-const admin = urlParams.get("admin")
-
-if(admin == "true"){
+if(isAdmin == "true"){
 	alunos.push({"complete": "Isaías Nascimento", "id":"isaias"})
 }
 
