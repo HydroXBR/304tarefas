@@ -116,7 +116,6 @@ app.get('/horarios',function(req,res) {
 
 app.get('/apagar', async function(req, res) {
 	console.log("Access APAGAR: " + new Date())
-
 		if (req.query.id) {
 			try {
 				const idTarefa = req.query.id;
@@ -128,10 +127,10 @@ app.get('/apagar', async function(req, res) {
 				}
 
 				console.log(`Tarefa ${idTarefa} removida com sucesso.`);
-				res.send(`Tarefa ${idTarefa} removida com sucesso.`);
+				res.status(200).send({success: true, reason: "Tarefa removida com sucesso."});
 			} catch (err) {
 				console.error('Erro ao remover tarefa:', err);
-				res.status(500).send('Erro ao remover tarefa.');
+				res.status(500).send({success: false, reason: err});
 			}
 		} else {
 			try {
