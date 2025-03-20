@@ -1,6 +1,11 @@
+const urlParams = new URLSearchParams(window.location.search);
+const tarefaId = urlParams.get('id');
+const isAdmin = urlParams.get('admin')
+
 document.getElementById('btnVoltar').addEventListener('click', function() {
-		window.location.href = '/'; 
+	isAdmin == "true" ? window.location.href = '/?admin=true' : window.location.href = '/'
 });
+
 document.getElementById('menuIcon').addEventListener('click', function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active'); 
@@ -228,6 +233,61 @@ function formatarData(dataString) {
 		return `${diaFormatado}/${mesFormatado}/${ano} às ${horasFormatadas}:${minutosFormatados}`;
 }
 
+async function fetchadd(id, days){
+	await fetch(`/moredays?id=${id}&days=${days}`).then(async response => {
+		const rr = await response.json()
+		if(rr.success == false){
+			alert("Erro ao adicionar os dias! Contate o Isaías, por favor.")
+			console.log("Reason add dias", rr.reason)
+		}else{
+			alert("Alterado com sucesso!")
+			window.location.href = `/tarefa?id=${id}&admin=true`
+		}
+	})
+}
+
+async function fetchdel(id){
+	await fetch(`/apagar?id=${id}&token=22222`).then(async response => {
+		const rr = await response.json()
+		if(rr.success == false){
+			alert("Erro ao deletar tarefa! Contate o Isaías, por favor.")
+			console.log("Reason add dias", rr.reason)
+		}else{
+			alert("Deletada com sucesso!")
+			window.location.href = `/?admin=true`
+		}
+	})
+}
+
+async function createAdminButtons(){
+	const ndiv = document.createElement("div")
+	ndiv.id = "setdate"
+
+	const ninput = document.createElement("input")
+	ninput.type = "number"
+	
+	const nbtn = document.createElement("button")
+	ninput.placeholder = "Dias a adicionar"
+	nbtn.innerText = "Adicionar"
+
+	nbtn.addEventListener('click', async function() {
+		if(!ninput.value) return alert("Você não inseriu os dias.")
+
+		fetchadd(tarefaId, ninput.value)
+	})
+
+	ndiv.appendChild(ninput)
+	ndiv.appendChild(nbtn)
+
+	document.getElementById("entregabox").appendChild(ndiv)
+
+	document.getElementById('deletediv').style.display = 'block'
+	let delbtn = document.getElementById("delete")
+	delbtn.addEventListener('click', async function() {
+		fetchdel(tarefaId)
+	})
+}
+
 
 document.addEventListener('DOMContentLoaded', async function() {
 	async function carregarTarefa(id) {
@@ -275,11 +335,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 		}
 	}
 
-		const urlParams = new URLSearchParams(window.location.search);
-		const tarefaId = urlParams.get('id');
+	
 		if (tarefaId) {
 			carregarTarefa(tarefaId);
 		}
+
+		if(isAdmin == "true") createAdminButtons()
 
 		const enviarComentarioBtn = document.getElementById('enviar-comentario');
 		enviarComentarioBtn.addEventListener('click', async function() {
