@@ -1,3 +1,7 @@
+const urlParams = new URLSearchParams(window.location.search);
+const tarefaId = urlParams.get('id');
+const isAdmin = urlParams.get('admin')
+
 document.getElementById('menuIcon').addEventListener('click', function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active'); 
@@ -260,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					console.log("Reason", rr.reason)
 				}else{
 					alert("Enviado com sucesso!")
-					window.location.href = "/index.html"
+					isAdmin == "true" ? window.location.href = '/?admin=true' : window.location.href = '/'
 				}
 			})
 		}
