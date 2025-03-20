@@ -347,8 +347,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 			const novoComentario = document.getElementById('novo-comentario').value;
 			if(novoComentario.trim() !== '') {
 				try {
-					const urlParams = new URLSearchParams(window.location.search);
-					const tarefaId = urlParams.get('id');
 					const authorSelector = document.getElementById('selecionar-nome');
 					const author = authorSelector.value;
 					if (!author) {
