@@ -85,7 +85,7 @@ const alunos = [
     "id": "ilanna"
   },
   {
-    "complete": "Iennyfer Laís",
+    "complete": "Jennyfer Laís",
     "id": "iennyfer"
   },
   {
@@ -145,7 +145,7 @@ const alunos = [
     "id": "paulo"
   },
   {
-    "complete": "Paulo Iunio",
+    "complete": "Paulo Junio",
     "id": "paulom"
   },
   {
